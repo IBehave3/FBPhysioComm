@@ -13,7 +13,7 @@ const processAllFiles = async () => {
   let file;
   while((file = await inbox.pop())) {
     const payload = await file.json();
-    console.log(`file contents: ${JSON.stringify(payload)}`);
+    console.log(`file contents: ${JSON.stringify(payload, null, 2)}`);
   }
 };
 
