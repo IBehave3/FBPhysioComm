@@ -1,0 +1,28 @@
+{
+  "name": "FBPhysioComm",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~6.1.0",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "fitbit": {
+    "appUUID": "563cf10a-0314-4e58-8b06-c2c387b2ffe0",
+    "appType": "app",
+    "appDisplayName": "FB Physio Comm",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": ["access_internet"],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}
