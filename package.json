@@ -13,7 +13,10 @@
     "appDisplayName": "FB Physio Comm",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
-    "requestedPermissions": ["access_internet", "access_heart_rate"],
+    "requestedPermissions": [
+      "access_internet",
+      "access_heart_rate"
+    ],
     "buildTargets": [
       "atlas",
       "vulcan"
