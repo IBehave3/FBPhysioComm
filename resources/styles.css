@@ -10,3 +10,68 @@
   height: 100%;
   fill: white;
 }
+
+#title {
+  x: 50%;
+  y: 10%;
+  text-anchor: middle;
+  font-size: 30;
+}
+
+#titleUnderline {
+  x1: 0%;
+  x2: 100%;
+  y1: 12%;
+  y2: 12%;
+  fill: black;
+  stroke-width: 1%;
+}
+
+#sensorUnderline {
+  x1: 0%;
+  x2: 100%;
+  y1: 72%;
+  y2: 72%;
+  fill: black;
+  stroke-width: 1%;
+}
+
+.sensor {
+  x: 5%;
+  font-size: 22;
+}
+
+#heartRate {
+  y: 20%;
+  text-length: 64;
+}
+
+#accelerometer {
+  y: 30%;
+  text-size: 64;
+}
+
+#barometer {
+  y: 40%;
+}
+
+#bodyPresence {
+  y: 50%;
+}
+
+#gyroscope {
+  y: 60%;
+}
+
+#orientation {
+  y: 70%;
+}
+
+#sendLine {
+  x1: 0%;
+  x2: 100%;
+  y1: 85%;
+  y2: 85%;
+  fill: red;
+  stroke-width: 30%;
+}

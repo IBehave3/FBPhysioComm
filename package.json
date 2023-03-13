@@ -15,7 +15,9 @@
     "wipeColor": "#ffffff",
     "requestedPermissions": [
       "access_internet",
-      "access_heart_rate"
+      "access_heart_rate",
+      "access_activity",
+      "run_background"
     ],
     "buildTargets": [
       "atlas",

@@ -1,3 +1,13 @@
-<svg>
+<svg id="root">
   <rect id="background" />
+  <text id="title">FB Physio App</text>
+  <line id="titleUnderline" />
+  <text class="sensor" id="heartRate" text-length="64">Heart Rate: disabled</text>
+  <text class="sensor" id="accelerometer" text-length="64">Accelerometer: disabled</text>
+  <text class="sensor" id="barometer" text-length="64">Borometer: disabled</text>
+  <text class="sensor" id="bodyPresence" text-length="64">Body Presence: disabled</text>
+  <text class="sensor" id="gyroscope" text-length="64">Gyroscope: disabled</text>
+  <text class="sensor" id="orientation" text-length="64">Orientation: disabled</text>
+  <line id="sensorUnderline" />
+  <line id="sendLine" />
 </svg>

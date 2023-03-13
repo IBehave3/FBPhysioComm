@@ -1,7 +1,14 @@
+// NOTE: import order is important here
 import { outbox } from 'file-transfer';
-import { physioState, resetPhysioState } from './physio';
 import * as fs from 'fs';
-import './heartRate';
+
+import { physioState, resetPhysioState } from './physio';
+import './sensor/heartRate';
+import './sensor/accelerometer';
+import './sensor/barometer';
+import './sensor/bodyPresence';
+import './sensor/gyroscope';
+import './sensor/orientation';
 
 setInterval(() => {
   physioState.timestamp = Date.now();
