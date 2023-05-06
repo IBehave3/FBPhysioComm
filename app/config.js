@@ -3,34 +3,34 @@
 export const HEART_RATE = {
   ENABLED: true,
   FREQUENCY: 1,
-  SAMPLE: 60,
+  SAMPLE: 10,
 };
 
 export const ACCELEROMETER = {
   ENABLED: true,
   FREQUENCY: 1,
-  SAMPLE: 60,
+  SAMPLE: 10,
 };
 
 export const BAROMETER = {
   ENABLED: true,
   FREQUENCY: 1,
-  SAMPLE: 60,
+  SAMPLE: 10,
 };
 
 export const GYROSCOPE = {
   ENABLED: true,
   FREQUENCY: 1,
-  SAMPLE: 60,
+  SAMPLE: 10,
 };
 
 export const ORIENTATION = {
   ENABLED: true,
   FREQUENCY: 1,
-  SAMPLE: 60,
+  SAMPLE: 10,
 };
 
 // NOTE: you cannot set the FREQUENCY/SAMPLE for body presence
 export const BODY_PRESENCE = {
-  ENABLED: false,
+  ENABLED: true,
 };

@@ -3,8 +3,8 @@ import { settingsStorage } from 'settings';
 
 // NOTE: front-end key names
 const sendDataField = 'sendData';
-const dbNameField = 'dbName';
-const dbContainerNameField = 'dbContainerName';
+const dbNameField = 'exampleDatabase';
+const dbContainerNameField = 'exampleContainer';
 
 const settings = {
   [sendDataField]: true,
@@ -13,22 +13,23 @@ const settings = {
 };
 
 const postDataCosmosDbContainer = (body) => {
-  fetch(`http://localhost:7005/api/PostDataCosmosDbContainer?dbName=${settings[dbNameField]}&dbContainerName=${settings[dbContainerNameField]}`, {
-    method: "POST",
-    body: JSON.stringify(body),
-  }).then((response) => {
-    // console.log(`Server response status: ${response.status}`);
-  }).catch((error) => console.error(error));
+  const url = 'https://theassembler1functionapp.azurewebsites.net/api/HttpExample?';
+
+  fetch(url, {method: "GET", mode: 'cors'}).then( (res) => {
+    return `Code: ${res.status} ${res.statusText}`
+  }).then(txt => {
+    // This is sending the message back to the watch. You can omit for testing.
+    console.log(txt);
+  }).catch( e => {
+    console.log(e);
+  });
 };
 
 const processAllFiles = async () => {
   let file;
   while((file = await inbox.pop())) {
     const payload = await file.json();
-    // console.log(`file contents: ${JSON.stringify(payload, null, 2)}`);
     if(settings[sendDataField]) {
-      console.log('WAS TRUE');
-      console.log(settings[sendDataField]);
       postDataCosmosDbContainer(payload);
     }
   }

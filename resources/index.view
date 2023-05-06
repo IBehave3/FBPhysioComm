@@ -1,13 +1,38 @@
 <svg id="root">
   <rect id="background" />
-  <text id="title">FB Physio App</text>
-  <line id="titleUnderline" />
-  <text class="sensor" id="heartRate" text-length="64">Heart Rate: disabled</text>
-  <text class="sensor" id="accelerometer" text-length="64">Accelerometer: disabled</text>
-  <text class="sensor" id="barometer" text-length="64">Borometer: disabled</text>
-  <text class="sensor" id="bodyPresence" text-length="64">Body Presence: disabled</text>
-  <text class="sensor" id="gyroscope" text-length="64">Gyroscope: disabled</text>
-  <text class="sensor" id="orientation" text-length="64">Orientation: disabled</text>
-  <line id="sensorUnderline" />
-  <line id="sendLine" />
+  <rect id="title-background" width="100%" height="12%" fill="fb-purple"/>
+  <text id="title">FBPhysio App</text>
+  <use id="scrollview" href="#scrollview">
+    <use href="#scrollview-item" height="65">
+      <text class="sensor" id="sensor-title">Heart Rate</text>
+      <text class="sensor" id="heart-rate" text-length="64">disabled</text>
+    </use>
+    <use href="#scrollview-item" height="105">
+      <text class="sensor" id="sensor-title">Accelerometer</text>
+      <text class="sensor" id="accelerometer-x" text-length="64">disabled</text>
+      <text class="sensor" id="accelerometer-y" text-length="64">disabled</text>
+      <text class="sensor" id="accelerometer-z" text-length="64">disabled</text>
+    </use>
+    <use href="#scrollview-item" height="65">
+      <text class="sensor" id="sensor-title">Borometer</text>
+      <text class="sensor" id="barometer" text-length="64">disabled</text>
+    </use>
+    <use href="#scrollview-item" height="65">
+      <text class="sensor" id="sensor-title">Body Presence</text>
+      <text class="sensor" id="body-presence" text-length="64">disabled</text>
+    </use>
+    <use href="#scrollview-item" height="105">
+      <text class="sensor" id="sensor-title">Gyroscope</text>
+      <text class="sensor" id="gyroscope-x" text-length="64">disabled</text>
+      <text class="sensor" id="gyroscope-y" text-length="64">disabled</text>
+      <text class="sensor" id="gyroscope-z" text-length="64">disabled</text>
+    </use>
+    <use href="#scrollview-item" height="200">
+      <text class="sensor" id="sensor-title">Orientation</text>
+      <text class="sensor" id="orientation-x" text-length="64">disabled</text>
+      <text class="sensor" id="orientation-y" text-length="64">disabled</text>
+      <text class="sensor" id="orientation-z" text-length="64">disabled</text>
+      <text class="sensor" id="orientation-scalar" text-length="64">disabled</text>
+    </use>
+  </use>
 </svg>
