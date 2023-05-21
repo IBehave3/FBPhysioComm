@@ -7,21 +7,24 @@ const dbNameField = 'exampleDatabase';
 const dbContainerNameField = 'exampleContainer';
 
 const settings = {
-  [sendDataField]: true,
+  [sendDataField]: false,
   [dbContainerNameField]: 'exampleContainer',
   [dbNameField]: 'exampleDatabase',
 };
 
 const postDataCosmosDbContainer = (body) => {
-  const url = 'https://theassembler1functionapp.azurewebsites.net/api/HttpExample?';
+  const url = `https://acp-research.com/api/post-container-inner?dbName=${settings[dbNameField]}&dbContainerName=${settings[dbContainerNameField]}`;
 
-  fetch(url, {method: "GET", mode: 'cors'}).then( (res) => {
-    return `Code: ${res.status} ${res.statusText}`
-  }).then(txt => {
-    // This is sending the message back to the watch. You can omit for testing.
-    console.log(txt);
-  }).catch( e => {
-    console.log(e);
+  console.log(`Attempting fetch at: ${url}`);
+
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  }).then((res) => {
+    console.log(`${url} Status: ${res.status}`)
+  })
+  .catch((e) => {
+    console.error('Failed to make HTTP request!');
   });
 };
 
