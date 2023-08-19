@@ -17,7 +17,7 @@ if (ACCELEROMETER.ENABLED && Accelerometer) {
     updateMilliClock(milliClock);
 
     const tsAccelerometer = {
-      timestamp: getTimeMilliClock(milliClock),
+      timestamp: new Date(Date.now()).toISOString(),
       accelerometer: {
         x: accelerometer.x,
         y: accelerometer.y,

@@ -8,8 +8,7 @@ registerSettingsPage(({ settings }) => (
       }
     >
       <Text align="center">FB Physio Comm</Text>
-      <TextInput settingsKey="dbContainerName" label="dbContainerName" placeholder="dbContainerName" />
-      <TextInput settingsKey="dbName" label="dbName" placeholder="dbName" />
+      <TextInput settingsKey="username" label="username" />
       <Toggle settingsKey="sendData" label="Send Data" />
     </Section>
   </Page>

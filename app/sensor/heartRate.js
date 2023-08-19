@@ -16,7 +16,7 @@ if (HEART_RATE.ENABLED && HeartRateSensor) {
     updateMilliClock(milliClock);
     
     const tsHeartRate = {
-      timestamp: getTimeMilliClock(milliClock),
+      timestamp: new Date(Date.now()).toISOString(),
       heartRate: hrm.heartRate, 
     };
 

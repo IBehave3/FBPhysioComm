@@ -3,17 +3,27 @@ import { settingsStorage } from 'settings';
 
 // NOTE: front-end key names
 const sendDataField = 'sendData';
-const dbNameField = 'exampleDatabase';
-const dbContainerNameField = 'exampleContainer';
+const usernameField = 'username';
+
+
+// NOTE: endpoint consts
+const base_url = 'https://www.acp-research.com';
+const dataStructureId = 'fitbit';
 
 const settings = {
   [sendDataField]: false,
-  [dbContainerNameField]: 'exampleContainer',
-  [dbNameField]: 'exampleDatabase',
+  [usernameField]: {
+    name: '',
+  },
 };
 
 const postDataCosmosDbContainer = (body) => {
-  const url = `https://acp-research.com/api/post-container-inner?dbName=${settings[dbNameField]}&dbContainerName=${settings[dbContainerNameField]}`;
+  if(!settings[usernameField].name) {
+    console.error('username not set');
+    return;
+  }
+
+  const url = `${base_url}/api/push-data?dataStructureId=${dataStructureId}&userId=${settings[usernameField].name}`;
 
   console.log(`Attempting fetch at: ${url}`);
 
@@ -43,8 +53,7 @@ processAllFiles();
 
 // NOTE: setting default front-end values
 settingsStorage.setItem(sendDataField, settings[sendDataField]);
-settingsStorage.setItem(dbNameField, settings[dbNameField]);
-settingsStorage.setItem(dbContainerNameField, settings[dbContainerNameField]);
+settingsStorage.setItem(usernameField, '');
 
 settingsStorage.addEventListener("change", (evt) => {
   for(const [key, value] of Object.entries(settings)) {
@@ -55,7 +64,7 @@ settingsStorage.addEventListener("change", (evt) => {
         settings[sendDataField] = true;
       }
     } else if(evt.key == key) {
-      settings[key] = evt.newValue;
+      settings[key] = JSON.parse(evt.newValue);
       break;
     }
   }

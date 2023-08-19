@@ -16,7 +16,7 @@ if (BAROMETER.ENABLED && Barometer) {
     updateMilliClock(milliClock);
 
     const tsBarometer = {
-      timestamp: getTimeMilliClock(milliClock),
+      timestamp: new Date(Date.now()).toISOString(),
       pressure: barometer.pressure,
     };
 

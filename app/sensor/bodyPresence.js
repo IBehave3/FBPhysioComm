@@ -12,7 +12,7 @@ if (BODY_PRESENCE.ENABLED && BodyPresenseSensor) {
     updateMilliClock(milliClock);
 
     const tsBodyPresence = {
-      timestamp: getTimeMilliClock(milliClock),
+      timestamp: new Date(Date.now()).toISOString(),
       heartRate: bodyPresence.present,
     };
 

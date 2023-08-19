@@ -16,7 +16,7 @@ if(ORIENTATION.ENABLED && OrientationSensor) {
     updateMilliClock(milliClock);
 
     const tsOrienation = {
-      timestamp: getTimeMilliClock(milliClock),
+      timestamp: new Date(Date.now()).toISOString(),
       orientation: {
         x: orientation.quaternion[0],
         y: orientation.quaternion[1],

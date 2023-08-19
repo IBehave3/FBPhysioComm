@@ -4,3 +4,6 @@
 # Device API Reference
 - https://dev.fitbit.com/build/reference/device-api/
 
+### To run
+`npx fitbit`
+`bi`

@@ -4,7 +4,7 @@ import * as document from 'document';
 export const physioState = {}
 
 export const resetPhysioState = () => {
-  physioState.timestamp = -1;
+  physioState.timestamp = '';
   if(config.HEART_RATE.ENABLED) { physioState.heartRate = []; }
   if(config.ACCELEROMETER.ENABLED) { physioState.accelerometer = []; }
   if(config.BAROMETER.ENABLED) { physioState.barometer = []; }

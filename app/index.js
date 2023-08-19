@@ -11,7 +11,7 @@ import './sensor/gyroscope';
 import './sensor/orientation';
 
 setInterval(() => {
-  physioState.timestamp = Date.now();
+  physioState.timestamp = new Date(Date.now()).toISOString();
   fs.writeFileSync("test.txt", physioState, "json");
   outbox.enqueueFile("/private/data/test.txt")
     .then(ft => () => {})

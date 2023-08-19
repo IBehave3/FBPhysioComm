@@ -16,7 +16,7 @@ if (GYROSCOPE.ENABLED && Gyroscope) {
     updateMilliClock(milliClock);
 
     const tsGyroscope = {
-      timestamp: getTimeMilliClock(milliClock),
+      timestamp: new Date(Date.now()).toISOString(),
       gyroscope: {
         x: gyroscope.x,
         y: gyroscope.y,
