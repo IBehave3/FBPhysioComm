@@ -28,7 +28,7 @@ if (GYROSCOPE.ENABLED && Gyroscope) {
     }
 
     sendMessage({
-      message_id: GYROSCOPE.MESSAGE_ID,
+      messageId: GYROSCOPE.MESSAGE_ID,
       data: gyroscopeModel,
     });
 

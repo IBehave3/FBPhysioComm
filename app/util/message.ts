@@ -1,7 +1,7 @@
 import * as messaging from "messaging";
 
 export type MessageModel = {
-  message_id: string;
+  messageId: string;
   data: any;
 };
 

@@ -29,7 +29,7 @@ if (ACCELEROMETER.ENABLED && Accelerometer) {
     }
 
     sendMessage({
-      message_id: ACCELEROMETER.MESSAGE_ID,
+      messageId: ACCELEROMETER.MESSAGE_ID,
       data: accelerometerModel,
     });
 

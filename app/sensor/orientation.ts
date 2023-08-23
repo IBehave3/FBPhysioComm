@@ -30,7 +30,7 @@ if(ORIENTATION.ENABLED && OrientationSensor) {
     }
 
     sendMessage({
-      message_id: ORIENTATION.MESSAGE_ID,
+      messageId: ORIENTATION.MESSAGE_ID,
       data: orientationModel,
     });
 

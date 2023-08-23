@@ -24,7 +24,7 @@ if (HEART_RATE.ENABLED && HeartRateSensor) {
     }
 
     sendMessage({
-      message_id: HEART_RATE.MESSAGE_ID,
+      messageId: HEART_RATE.MESSAGE_ID,
       data: heartRateModel,
     });
 

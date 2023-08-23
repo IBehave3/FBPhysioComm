@@ -25,7 +25,7 @@ if (BAROMETER.ENABLED && Barometer) {
     }
 
     sendMessage({
-      message_id: BAROMETER.MESSAGE_ID,
+      messageId: BAROMETER.MESSAGE_ID,
       data: barometerModel,
     });
 
