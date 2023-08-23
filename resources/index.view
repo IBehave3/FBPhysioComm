@@ -17,10 +17,6 @@
       <text class="sensor" id="sensor-title">Borometer</text>
       <text class="sensor" id="barometer" text-length="64">disabled</text>
     </use>
-    <use href="#scrollview-item" height="65">
-      <text class="sensor" id="sensor-title">Body Presence</text>
-      <text class="sensor" id="body-presence" text-length="64">disabled</text>
-    </use>
     <use href="#scrollview-item" height="105">
       <text class="sensor" id="sensor-title">Gyroscope</text>
       <text class="sensor" id="gyroscope-x" text-length="64">disabled</text>
