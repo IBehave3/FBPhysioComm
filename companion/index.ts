@@ -7,7 +7,15 @@ console.log('starting fitbit companion app');
 // NOTE: front-end key names
 const sendDataField = 'sendData';
 const usernameField = 'username';
-const settings = {
+
+type SettingsModel = {
+  [sendDataField]: boolean,
+  [usernameField]: {
+    name: string,
+  }
+}
+
+const settings: SettingsModel = {
   [sendDataField]: false,
   [usernameField]: {
     name: '',
@@ -40,7 +48,7 @@ settingsStorage.addEventListener("change", (evt) => {
 
 let webSocket: WebSocket;
 function serverSocketConnect() {
-  webSocket = new WebSocket('ws://127.0.0.1:3000/socket?userId=noah-lewis');
+  webSocket = new WebSocket(`ws://127.0.0.1:3000/socket?userId=${settings[usernameField]}`);
   webSocket.addEventListener('open', (_event) => {
     console.log('server socket opened');
   });
@@ -76,17 +84,14 @@ function peerSocketConnect() {
       console.log('server web socket not intialized');
       return;
     }
-
     if(!webSocket.OPEN) {
       console.log('server web socket is not open');
       return;
     }
-
     if(!settings[usernameField].name) {
       console.error('username field not set');
       return;
     }
-
     if(!settings[sendDataField]) {
       console.log('ignoring peer data as send data is set to false');
       return;
