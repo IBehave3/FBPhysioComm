@@ -30,5 +30,8 @@
   "scripts": {
     "build": "fitbit-build",
     "debug": "fitbit"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0"
   }
 }

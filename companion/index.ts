@@ -2,6 +2,10 @@ import { settingsStorage } from 'settings';
 import { MessageModel } from '../app/util/message';
 import * as messaging from 'messaging';
 
+const serverDomain = 'www.acp-research.com';
+const serverPort = '80';
+const serverScheme = 'wss';
+
 console.log('starting fitbit companion app');
 
 // NOTE: front-end key names
@@ -48,7 +52,7 @@ settingsStorage.addEventListener("change", (evt) => {
 
 let webSocket: WebSocket;
 function serverSocketConnect() {
-  webSocket = new WebSocket(`ws://127.0.0.1:3000/socket?userId=${settings[usernameField]}`);
+  webSocket = new WebSocket(`${serverScheme}://${serverDomain}:${serverPort}/socket?userId=${settings[usernameField]}`);
   webSocket.addEventListener('open', (_event) => {
     console.log('server socket opened');
   });
